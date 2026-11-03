@@ -27,7 +27,7 @@ class SimpleAutoencoder(Model):
         ])
         
         self.decoder = tf.keras.Sequential([
-            layers.Dense(28 * 28, activation='sigmoid'),
+            layers.Dense(28 * 28, activation='sigmoid'), # Remember that the encoder produced 64 values, decoder takes these 64 values and transforms them into 28*28=784 values.
             layers.Reshape((28, 28, 1))
         ])
     
@@ -42,10 +42,10 @@ autoencoder = SimpleAutoencoder(latent_dimensions)
 autoencoder.compile(optimizer='adam', loss=losses.MeanSquaredError())
 
 autoencoder.fit(x_train, x_train,
-                epochs=10,
-                batch_size=256,
-                shuffle=True,
-                validation_data=(x_test, x_test))
+                epochs=10, #The model sees the entire training dataset 10 times.
+                batch_size=256, #Processes 256 images per training batch.
+                shuffle=True, #Randomizes the order of training images.
+                validation_data=(x_test, x_test)) #Evaluates reconstruction performance on test images
 
 # %% Visualize original and reconstructed data
 encoded_imgs = autoencoder.encoder(x_test).numpy()
