@@ -23,6 +23,8 @@ A simplified flow is: Tokens → Embeddings → Transformer Blocks → Output
 Self-attention helps the model understand relationships between tokens by determining which tokens are important to each other.
 For example, it helps connect "it" with the relevant word in: The animal crossed the road because it was tired.
 
+It allows the model to look at all words at the same time and decide which ones are important for understanding the meaning of each word. Because of this, self-attention captures context more effectively and plays a key role in models like Transformers.
+
 ### Next-Token Prediction
 
 The LLM predicts the next token based on the previous tokens.

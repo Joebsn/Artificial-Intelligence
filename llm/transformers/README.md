@@ -49,7 +49,16 @@ Positional encoding is a technique that adds information about the position of e
 
 ### Position-wise Feed-Forward Networks
 
+The Feed-Forward Networks consist of two linear transformations with a ReLU activation. It is applied independently to each position in the sequence.This transformation helps refine the encoded representation at each position.
+
 ### Add & Norm (Residual Connections and Layer Normalization)
+
+Each sub-layer in the transformer (such as self-attention and feed-forward networks) is followed by an Add & Norm step.
+
+- Residual Connection (Add): The input of a layer is added to its output. This helps in preserving information and prevents vanishing gradients in deep networks.
+- Layer Normalization (Norm): The combined output is normalized to stabilize training and improve convergence.
+
+This structure ensures better gradient flow and allows training of deep transformer models efficiently.
 
 ### Embeddings
 
@@ -65,3 +74,9 @@ Transformers cannot work with raw words as they need numbers. So, each input tok
 The encoder-decoder structure is key to transformer models. The encoder processes the input sequence into a vector, while the decoder converts this vector back into a sequence. Each encoder and decoder layer includes self-attention and feed-forward layers.
 
 ### Softmax Layer for Output Prediction
+
+After the decoder processes the sequence, it must predict the next token.
+
+- The decoder output is passed through a linear layer (whose weights are shared with embeddings).
+- Then the softmax function converts these scores into probabilities.
+- The token with the highest probability becomes the predicted next word.
