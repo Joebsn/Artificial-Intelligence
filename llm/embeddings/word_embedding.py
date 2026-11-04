@@ -1,11 +1,13 @@
 # %% Import libraries
 import numpy as np
+import smart_open
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 import gensim.downloader as api
 from gensim.models import Word2Vec
 
 # %% Load Data and Train Word2Vec Model
+smart_open.smart_open = smart_open.open
 corpus = api.load('text8')
 model = Word2Vec(corpus)
 
@@ -21,12 +23,16 @@ words = ['cat', 'dog', 'elephant', 'lion', 'bird', 'rat', 'wolf', 'cow',
 words = [word for word in words if word in model.wv.key_to_index]
 word_embeddings = [model.wv[word] for word in words]
 embeddings = np.array(word_embeddings)
+print(embeddings)
+print(embeddings.shape)
 
 # %% Reduce Dimensionality with t-SNE
 # (Uses t-SNE from scikit learn to shrink high dimensional word vectors into
 # two dimensions for visualization.)
 tsne = TSNE(n_components=2, perplexity=2)
 embeddings_2d = tsne.fit_transform(embeddings)
+print(embeddings_2d)
+print(embeddings_2d.shape)
 
 # %% Plot Embedding
 plt.figure(figsize=(10, 7), dpi=1000)

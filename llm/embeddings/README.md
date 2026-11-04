@@ -61,3 +61,14 @@ Once ready, embeddings can be used for:
 - Clustering: grouping similar items together.
 - Recommendations: suggesting similar products, content or users.
 - Monitoring: spotting unusual changes or patterns over time.
+
+## Types of Data Represented with Embeddings
+
+Embeddings can represent different types of data by converting them into dense vectors, making it easier for models to understand patterns, relationships and meaning.
+
+- Words
+- Complete Text Document
+- Audio data
+- Image data
+- Graph data
+- Structured data
