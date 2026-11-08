@@ -30,3 +30,4 @@ outputs = model.generate(
 for i, out in enumerate(outputs):
     text = tokenizer.decode(out, skip_special_tokens=True)
     print(f"Generation {i+1}\n{text}\n")
+# %%

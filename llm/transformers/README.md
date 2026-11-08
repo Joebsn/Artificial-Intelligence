@@ -45,7 +45,7 @@ Unlike RNNs, transformers lack an inherent understanding of word order since the
 
 Positional encoding is a technique that adds information about the position of each token in a sequence to its input embedding. This helps transformers understand the order of tokens and capture the structure of a sequence. Without positional information, the self-attention mechanism alone does not inherently know the order of the tokens.
 
-![alt text](image.png)
+![alt text](positional_encoding.png)
 
 ### Position-wise Feed-Forward Networks
 

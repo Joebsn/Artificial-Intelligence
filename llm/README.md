@@ -2,7 +2,7 @@
 
 ## Working of LLM
 
-![alt text](image.png)
+![alt text](llm.png)
 
 ### Tokenization
 
@@ -35,7 +35,7 @@ The process repeats one token at a time until the complete response is generated
 
 Language models learn patterns in language and assign probabilities to word or token sequences, allowing them to predict the next token, complete sequences and estimate how likely a sequence is.
 
-![alt text](image-1.png)
+![alt text](prediction.png)
 
 ### Working
 

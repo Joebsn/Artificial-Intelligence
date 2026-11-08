@@ -31,4 +31,4 @@ The system first searches external sources for relevant information based on the
 - Answer Generation: LLM uses both the query and retrieved data to generate a factually accurate, context aware response.
 - Keeping Data Updated: External data and embeddings are refreshed regularly in real time or scheduled so the system always retrieves latest information.
 
-![alt text](image.png)
+![alt text](rag_flow.png)
