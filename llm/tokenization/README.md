@@ -44,3 +44,17 @@ N-gram tokenization splits words into fixed-sized chunks (size = n) of data.
 
 - Input before tokenization: ["Machine learning is powerful"]
 - Output when tokenized by bigrams: [('Machine', 'learning'), ('learning', 'is'), ('is', 'powerful')]
+
+## Byte-Pair Encoding (BPE)
+
+Byte-Pair Encoding (BPE) is a text tokenization technique in Natural Language Processing. It represents words as smaller units called subwords or tokens by repeatedly merging frequent adjacent symbols during training.
+
+BPE starts by representing each word as a sequence of individual characters or initial tokens. It then repeatedly finds the most frequent pair of adjacent tokens and merges them into a single subword token. The process continues until the desired number of merges or vocabulary size is reached.
+
+## Tokens and Context Windows in LLMs
+
+In Large Language Models (LLMs), tokens and context windows determine how text is represented and how much information a model can work with at a time. Understanding these concepts helps explain the limits of LLM inputs and outputs and how they handle longer text.
+
+A context window is the maximum number of tokens a model can consider as context during a model invocation.
+
+If a model has a 128K-token context window, its context can contain up to approximately 128,000 tokens, subject to the model and application’s specific limits.
